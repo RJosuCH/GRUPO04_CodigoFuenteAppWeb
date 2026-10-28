@@ -271,6 +271,7 @@ body {
     height: 140px;
     object-fit: contain;
     margin-bottom: 12px;
+    transition: transform 0.3s ease;
 }
 
 .current-price {
@@ -474,10 +475,6 @@ body {
 
 body.cart-open {
     overflow: hidden;
-}
-
-.product-img-real {
-    transition: transform 0.3s ease;
 }
 
 .product-card:hover .product-img-real {
