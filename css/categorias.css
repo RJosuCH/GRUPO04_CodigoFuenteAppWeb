@@ -1,0 +1,112 @@
+.dropdown-dept {
+    position: relative;
+}
+
+.dept-btn {
+    background-color: #a01015;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dept-btn .arrow {
+    font-size: 0.75rem;
+    margin-left: 5px;
+}
+
+.mega-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 520px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    border-radius: 0 0 8px 8px;
+    z-index: 2000;
+}
+
+.dropdown-dept:hover .mega-menu,
+.dropdown-dept:focus-within .mega-menu {
+    display: flex;
+}
+
+.cat-list {
+    width: 45%;
+    list-style: none;
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+}
+
+.cat-list li {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cat-list li i {
+    width: 20px;
+    margin-right: 8px;
+    color: #c8181d;
+    text-align: center;
+}
+
+.cat-list li .arrow-icon {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-right: 0;
+}
+
+.cat-list li:hover, .cat-list li.active {
+    background-color: #ffffff;
+    color: #c8181d;
+}
+
+.cat-list li.active .arrow-icon,
+.cat-list li:hover .arrow-icon {
+    color: #c8181d;
+}
+
+.subcat-panel {
+    width: 55%;
+    padding: 20px;
+}
+
+.subcat-content {
+    display: none;
+}
+
+.subcat-content.active {
+    display: block;
+}
+
+.subcat-content h3 {
+    font-size: 0.95rem;
+    color: #c8181d;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #c8181d;
+    padding-bottom: 4px;
+}
+
+.subcat-content a {
+    display: block;
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.88rem;
+    margin-bottom: 10px;
+}
+
+.subcat-content a:hover {
+    color: #c8181d;
+    font-weight: bold;
+}
