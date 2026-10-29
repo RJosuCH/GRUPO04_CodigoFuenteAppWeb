@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eléctrica - FERREMAS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/categorias.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/electrica.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span>Envío gratis por compras mayores a $50.00</span>
+        <div class="top-links">
+            <a href="#">Tiendas</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+    <header class="main-header">
+        <a href="index.html" class="logo">FERREMAS</a>
+        <div class="search-box">
+            <input type="text" placeholder="¿Qué estas buscando para tu proyecto? (ej. Taladro, Pintura...)">
+            <button type="button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <div class="header-actions">
+            <a href="iniciosesion.html" class="action-btn">
+                <span class="icon">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+                <span class="label">Iniciar Sesion</span>
+            </a>
+            <button type="button" class="action-btn" id="open-cart">
+                <span class="icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <span class="label">Carrito</span>
+                <span class="cart-count" id="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="dropdown-dept">
+                <button class="dept-btn" id="toggle-dept">
+                    <i class="fa-solid fa-bars"></i>
+                    DEPARTAMENTOS
+                    <i class="fa-solid fa-chevron-down arrow"></i>
+                </button>
+                <div class="mega-menu" id="mega-menu">
+                    <ul class="cat-list">
+                        <li data-target="sub-herramientas"
+                            onclick="window.location.href='herramientas.html'">
+                            <span>
+                                <i class="fa-solid fa-wrench"></i>
+                                Herramientas
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-automotriz"
+                            onclick="window.location.href='automotriz.html'">
+                            <span>
+                                <i class="fa-solid fa-car"></i>
+                                Automotriz
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-construccion"
+                            onclick="window.location.href='construccion.html'">
+                            <span>
+                                <i class="fa-solid fa-trowel-bricks"></i>
+                                Construccion
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-pinturas"
+                            onclick="window.location.href='pinturas.html'">
+                            <span>
+                                <i class="fa-solid fa-paint-roller"></i>
+                                Pinturas
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li class="active" data-target="sub-electrica"
+                            onclick="window.location.href='electrica.html'">
+                            <span>
+                                <i class="fa-solid fa-bolt"></i>
+                                Electrica
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-plomeria">
+                            <span>
+                                <i class="fa-solid fa-faucet-drip"></i>
+                                Plomeria
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                    </ul>
+                    <div class="subcat-panel">
+                        <div class="subcat-content" id="sub-herramientas">
+                            <h3>HERRAMIENTAS</h3>
+                            <a href="productos.html?cat=herramientas-electricas">Herramientas Electricas</a>
+                            <a href="productos.html?cat=herramientas-manuales">Herramientas Manuales</a>
+                            <a href="productos.html?cat=cajas-herramientas">Cajas y Organizadores</a>
+                        </div>
+                        <div class="subcat-content" id="sub-automotriz">
+                            <h3>AUTOMOTRIZ</h3>
+                            <a href="productos.html?cat=aceites">Aceites y Lubricantes</a>
+                            <a href="productos.html?cat=baterias">Baterias y Cables</a>
+                        </div>
+                        <div class="subcat-content" id="sub-construccion">
+                            <h3>CONSTRUCCION</h3>
+                            <a href="productos.html?cat=cemento">Cemento y Morteros</a>
+                            <a href="productos.html?cat=varillas">Varillas y Mallas</a>
+                        </div>
+                        <div class="subcat-content" id="sub-pinturas">
+                            <h3>PINTURAS</h3>
+                            <a href="productos.html?cat=interiores">Interiores y Exteriores</a>
+                            <a href="productos.html?cat=brochas">Brochas y Rodillos</a>
+                        </div>
+                        <div class="subcat-content active" id="sub-electrica">
+                            <h3>ELECTRICA</h3>
+                            <a href="productos.html?cat=cables">Cables y Conductores</a>
+                            <a href="productos.html?cat=iluminacion">Focos e Iluminacion</a>
+                        </div>
+                        <div class="subcat-content" id="sub-plomeria">
+                            <h3>PLOMERÍA</h3>
+                            <a href="productos.html?cat=tuberias">Tuberias y Conexiones</a>
+                            <a href="productos.html?cat=griferia">Griferia y Llaves</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Catalogo Completo</a>
+                <a href="productos.html?ofertas=true" class="offer-link">Ofertas</a>
+                <a href="pedidos.html">Mis Pedidos</a>
+            </div>
+        </div>
+    </nav>
+    <section class="category-hero">
+        <div class="hero-container">
+            <div class="hero-info">
+                <span class="sub-badge">ENERGÍA BAJO CONTROL</span>
+                <h1 class="hero-title">
+                    Conecta seguridad, eficiencia y confianza.
+                </h1>
+                <p class="hero-description">
+                    Productos certificados para instalaciones
+                    residenciales y profesionales. Diseña,
+                    protege y renueva cada circuito con total confianza.
+                </p>
+                <div class="hero-actions">
+                    <a href="#catalogo" class="btn-primary">
+                        Ver productos &rarr;
+                    </a>
+                    <a href="https://wa.me/50300000000"
+                       class="btn-secondary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Hablar con un experto
+                    </a>
+                </div>
+            </div>
+            <div class="electric-banner">
+                <div class="banner-wrapper">
+                    <img src="imagenes/imagen-electrica.png"
+                         alt="Profesional trabajando en instalación eléctrica">
+                    <div class="quality-badge">
+                        <strong>Calidad profesional</strong>
+                        <span>Garantía y respaldo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featured-section" id="catalogo">
+        <div class="section-container">
+            <div class="section-header">
+                <div>
+                    <span class="section-badge">
+                        SELECCIÓN DEL MAESTRO
+                    </span>
+                    <h2 class="section-title">
+                        Lo esencial en eléctrica
+                    </h2>
+                </div>
+                <a href="productos.html?cat=electrica"
+                   class="link-more">
+                    Ver toda la categoría &rarr;
+                </a>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="card-img-container">
+                        <img src="imagenes/centro-carga.png"
+                             alt="Centro de carga">
+                    </div>
+                    <div class="card-details">
+                        <span class="stock-tag">DISPONIBLE</span>
+                        <h3 class="product-name">
+                            Centro de carga 12 polos
+                        </h3>
+                        <p class="product-specs">
+                            Sobreponer · Certificación NOM
+                        </p>
+                        <div class="product-price">$20.00</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-img-container">
+                        <img src="imagenes/multimetro.png"
+                             alt="Multímetro digital">
+                    </div>
+                    <div class="card-details">
+                        <span class="stock-tag">DISPONIBLE</span>
+                        <h3 class="product-name">
+                            Multímetro digital
+                        </h3>
+                        <p class="product-specs">
+                            Rango automático · True RMS
+                        </p>
+                        <div class="product-price">$24.99</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-img-container">
+                        <img src="imagenes/cable-thw.png"
+                             alt="Cable THW-LS calibre 12">
+                    </div>
+                    <div class="card-details">
+                        <span class="stock-tag">DISPONIBLE</span>
+                        <h3 class="product-name">
+                            Cable THW-LS calibre 12
+                        </h3>
+                        <p class="product-specs">
+                            Rollo 100 m · Cobre 100%
+                        </p>
+                        <div class="product-price">$49.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Tu Carrito de Compras
+            </h2>
+            <button type="button" id="close-cart"
+                    aria-label="Cerrar carrito">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div>
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div>
+                    <span>Envío estimado:</span>
+                    <strong class="free-shipping">¡GRATIS!</strong>
+                </div>
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <strong id="cart-total">$0.00</strong>
+                </div>
+            </div>
+            <button type="button" id="checkout-btn"
+                    class="checkout-btn">
+                PROCESAR COMPRA
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+    <script src="js/departamento.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/electrica.js"></script>
+</body>
+</html>
