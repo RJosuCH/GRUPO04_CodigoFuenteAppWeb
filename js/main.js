@@ -8,7 +8,10 @@ const subtotalElement = document.getElementById("cart-subtotal");
 const totalElement = document.getElementById("cart-total");
 const checkoutBtn = document.getElementById("checkout-btn");
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carritoFERREMAS")) || [];
+function guardarCarrito() {
+    localStorage.setItem("carritoFERREMAS", JSON.stringify(carrito));
+}
 
 const precios = {
     "Taladro Percutor 20V": 89.99,
@@ -55,6 +58,7 @@ function agregarAlCarrito(nombre) {
         });
     }
 
+    guardarCarrito();
     actualizarCarrito();
     abrirCarrito();
 }
@@ -95,6 +99,7 @@ function actualizarCarrito() {
 
         eliminar.addEventListener("click", function () {
             carrito.splice(index, 1);
+            guardarCarrito();
             actualizarCarrito();
         });
 
