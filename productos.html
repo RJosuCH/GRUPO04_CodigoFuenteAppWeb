@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo - FERREMAS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/categorias.css">
+    <link rel="stylesheet" href="css/productos.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span>Envío gratis por compras mayores a $50.00</span>
+        <div class="top-links">
+            <a href="#">Tiendas</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+    <header class="main-header">
+        <a href="index.html" class="logo">FERREMAS</a>
+        <div class="search-box">
+            <input type="text" id="busqueda-header"
+                   placeholder="¿Qué estas buscando para tu proyecto? (ej. Taladro, Pintura...)">
+            <button type="button" id="buscar-header"
+                    aria-label="Buscar productos">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <div class="header-actions">
+            <a href="iniciosesion.html" class="action-btn">
+                <span class="icon">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+                <span class="label">Iniciar Sesion</span>
+            </a>
+            <button type="button" class="action-btn" id="open-cart">
+                <span class="icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <span class="label">Carrito</span>
+                <span class="cart-count" id="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="dropdown-dept">
+                <button type="button" class="dept-btn" id="toggle-dept">
+                    <i class="fa-solid fa-bars"></i>
+                    DEPARTAMENTOS
+                    <i class="fa-solid fa-chevron-down arrow"></i>
+                </button>
+                <div class="mega-menu" id="mega-menu">
+                    <ul class="cat-list">
+                        <li data-target="sub-herramientas"
+                            onclick="location.href='herramientas.html'">
+                            <span><i class="fa-solid fa-wrench"></i> Herramientas</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-automotriz"
+                            onclick="location.href='automotriz.html'">
+                            <span><i class="fa-solid fa-car"></i> Automotriz</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-construccion"
+                            onclick="location.href='construccion.html'">
+                            <span><i class="fa-solid fa-trowel-bricks"></i> Construcción</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-pinturas"
+                            onclick="location.href='pinturas.html'">
+                            <span><i class="fa-solid fa-paint-roller"></i> Pinturas</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-electrica"
+                            onclick="location.href='electrica.html'">
+                            <span><i class="fa-solid fa-bolt"></i> Eléctrica</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-plomeria"
+                            onclick="location.href='plomeria.html'">
+                            <span><i class="fa-solid fa-faucet-drip"></i> Plomería</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                    </ul>
+                    <div class="subcat-panel">
+                        <div class="subcat-content active" id="sub-herramientas">
+                            <h3>HERRAMIENTAS</h3>
+                            <a href="herramientas.html">Ver herramientas</a>
+                            <a href="productos.html?cat=herramientas">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-automotriz">
+                            <h3>AUTOMOTRIZ</h3>
+                            <a href="automotriz.html">Ver automotriz</a>
+                            <a href="productos.html?cat=automotriz">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-construccion">
+                            <h3>CONSTRUCCIÓN</h3>
+                            <a href="construccion.html">Ver construcción</a>
+                            <a href="productos.html?cat=construccion">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-pinturas">
+                            <h3>PINTURAS</h3>
+                            <a href="pinturas.html">Ver pinturas</a>
+                            <a href="productos.html?cat=pinturas">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-electrica">
+                            <h3>ELÉCTRICA</h3>
+                            <a href="electrica.html">Ver eléctrica</a>
+                            <a href="productos.html?cat=electrica">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-plomeria">
+                            <h3>PLOMERÍA</h3>
+                            <a href="plomeria.html">Ver plomería</a>
+                            <a href="productos.html?cat=plomeria">Todos los productos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html" class="active">Catalogo Completo</a>
+                <a href="productos.html?ofertas=true" class="offer-link">Ofertas</a>
+                <a href="pedidos.html">Mis Pedidos</a>
+            </div>
+        </div>
+    </nav>
+    <section class="catalogo-hero">
+        <div class="catalogo-container">
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Catálogo Completo</span>
+            </div>
+            <span class="catalogo-etiqueta">TODO PARA TUS PROYECTOS</span>
+            <h1>Explora nuestro catálogo</h1>
+            <p>
+                Encuentra herramientas, materiales y accesorios de calidad
+                para cada proyecto. Todo en un solo lugar.
+            </p>
+        </div>
+    </section>
+    <main class="catalogo-container catalogo-layout">
+        <aside class="filtros-panel">
+            <div class="filtros-encabezado">
+                <h2><i class="fa-solid fa-sliders"></i> Filtros</h2>
+                <button type="button" id="limpiar-filtros">
+                    Limpiar
+                </button>
+            </div>
+            <div class="filtro-grupo">
+                <h3>Categorías</h3>
+                <label><input type="radio" name="categoria" value="todos" checked> Todos los productos</label>
+                <label><input type="radio" name="categoria" value="herramientas"> Herramientas</label>
+                <label><input type="radio" name="categoria" value="automotriz"> Automotriz</label>
+                <label><input type="radio" name="categoria" value="construccion"> Construcción</label>
+                <label><input type="radio" name="categoria" value="pinturas"> Pinturas</label>
+                <label><input type="radio" name="categoria" value="electrica"> Eléctrica</label>
+                <label><input type="radio" name="categoria" value="plomeria"> Plomería</label>
+            </div>
+            <div class="filtro-grupo">
+                <h3>Rango de precio</h3>
+                <div class="precio-inputs">
+                    <div>
+                        <label for="precio-min">Mínimo</label>
+                        <input type="number" id="precio-min"
+                               min="0" placeholder="$0">
+                    </div>
+                    <div>
+                        <label for="precio-max">Máximo</label>
+                        <input type="number" id="precio-max"
+                               min="0" placeholder="Sin límite">
+                    </div>
+                </div>
+            </div>
+            <div class="filtro-grupo">
+                <h3>Disponibilidad</h3>
+                <label>
+                    <input type="checkbox" id="solo-disponibles">
+                    Solo disponibles
+                </label>
+            </div>
+        </aside>
+        <section class="catalogo-productos">
+            <div class="catalogo-toolbar">
+                <div>
+                    <h2 id="titulo-resultados">Todos los productos</h2>
+                    <p id="contador-productos">Cargando productos...</p>
+                </div>
+                <div class="ordenar-contenedor">
+                    <label for="ordenar-productos">Ordenar por:</label>
+                    <select id="ordenar-productos">
+                        <option value="relevancia">Relevancia</option>
+                        <option value="menor">Menor precio</option>
+                        <option value="mayor">Mayor precio</option>
+                        <option value="nombre">Nombre A-Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="catalogo-grid" id="catalogo-grid"></div>
+            <div class="sin-resultados" id="sin-resultados" hidden>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No encontramos productos</h3>
+                <p>Prueba con otra búsqueda o cambia los filtros.</p>
+            </div>
+        </section>
+    </main>
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Tu Carrito de Compras
+            </h2>
+            <button type="button" id="close-cart" aria-label="Cerrar carrito">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div>
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div>
+                    <span>Envío estimado:</span>
+                    <strong class="free-shipping">¡GRATIS!</strong>
+                </div>
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <strong id="cart-total">$0.00</strong>
+                </div>
+            </div>
+            <button type="button" id="checkout-btn" class="checkout-btn">
+                PROCESAR COMPRA
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+    <footer class="main-footer">
+        <p>© 2026 FERREMAS - Todo para tus proyectos.</p>
+    </footer>
+    <script src="js/departamento.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/productos.js"></script>
+</body>
+</html>

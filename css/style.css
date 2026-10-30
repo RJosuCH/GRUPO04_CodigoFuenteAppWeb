@@ -503,3 +503,16 @@ body.cart-open {
         padding: 16px;
     }
 }
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
