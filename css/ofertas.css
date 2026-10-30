@@ -1,0 +1,574 @@
+:root {
+    --oferta-rojo: #c8181d;
+    --oferta-oscuro: #10182d;
+    --oferta-amarillo: #facc15;
+    --oferta-gris: #64748b;
+}
+
+.ofertas-hero {
+    background:
+        radial-gradient(circle at 85% 30%, rgba(200,24,29,0.28), transparent 35%),
+        linear-gradient(120deg, #10182d, #1e293b);
+    padding: 65px 30px;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.ofertas-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.ofertas-etiqueta {
+    display: inline-block;
+    background: rgba(250,204,21,0.12);
+    color: #facc15;
+    border: 1px solid rgba(250,204,21,0.35);
+    border-radius: 25px;
+    padding: 9px 16px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.ofertas-etiqueta i {
+    margin-right: 7px;
+}
+
+.ofertas-hero h1 {
+    font-size: clamp(35px, 4vw, 55px);
+    line-height: 1.15;
+    font-weight: 900;
+    max-width: 650px;
+}
+
+.ofertas-hero h1 span {
+    color: var(--oferta-amarillo);
+}
+
+.ofertas-hero-info > p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-top: 22px;
+    max-width: 570px;
+}
+
+.ofertas-hero-acciones {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.ofertas-btn-principal,
+.ofertas-btn-secundario {
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.25s;
+}
+
+.ofertas-btn-principal {
+    background: var(--oferta-rojo);
+    color: white;
+}
+
+.ofertas-btn-principal:hover {
+    background: #a01015;
+    transform: translateY(-2px);
+}
+
+.ofertas-btn-secundario {
+    border: 1px solid #64748b;
+    color: white;
+}
+
+.ofertas-btn-secundario:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* PROMOCION */
+
+.ofertas-hero-promo {
+    display: flex;
+    justify-content: center;
+}
+
+.promo-circulo {
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    background: #facc15;
+    color: #10182d;
+    border: 10px solid rgba(255,255,255,0.2);
+    outline: 2px dashed rgba(250,204,21,0.5);
+    outline-offset: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: rotate(8deg);
+    box-shadow: 0 20px 55px rgba(0,0,0,0.25);
+}
+
+.promo-circulo > span {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.promo-circulo strong {
+    font-size: 23px;
+    margin-top: 8px;
+}
+
+.promo-porcentaje {
+    font-size: 76px;
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+/* BENEFICIOS */
+
+.beneficios-ofertas {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.beneficios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.beneficio > i {
+    color: var(--oferta-rojo);
+    font-size: 25px;
+}
+
+.beneficio div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.beneficio strong {
+    font-size: 13px;
+    color: #10182d;
+}
+
+.beneficio span {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* PRINCIPAL */
+
+.ofertas-main {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 25px 70px;
+}
+
+.ofertas-seccion-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.ofertas-subtitulo {
+    color: var(--oferta-rojo);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.ofertas-seccion-header h2 {
+    font-size: 30px;
+    color: #10182d;
+    margin: 8px 0;
+}
+
+.ofertas-seccion-header p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.ofertas-ordenar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ofertas-ordenar label {
+    font-size: 13px;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.ofertas-ordenar select {
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    color: #334155;
+    cursor: pointer;
+}
+
+/* FILTROS */
+
+.ofertas-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.filtro-oferta {
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #475569;
+    border-radius: 25px;
+    padding: 11px 17px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.filtro-oferta:hover {
+    border-color: var(--oferta-rojo);
+    color: var(--oferta-rojo);
+}
+
+.filtro-oferta.active {
+    background: var(--oferta-rojo);
+    border-color: var(--oferta-rojo);
+    color: white;
+}
+
+.ofertas-contador {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/*PRODUCTOS */
+
+.ofertas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.oferta-card {
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.oferta-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.oferta-imagen {
+    position: relative;
+    background: #f8fafc;
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oferta-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.oferta-card:hover .oferta-imagen img {
+    transform: scale(1.07);
+}
+
+.oferta-descuento {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--oferta-rojo);
+    color: #ffffff;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 900;
+    z-index: 1;
+}
+
+.oferta-detalles {
+    padding: 19px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.oferta-categoria {
+    color: var(--oferta-rojo);
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 9px;
+}
+
+.oferta-nombre {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #10182d;
+    margin-bottom: 8px;
+}
+
+.oferta-descripcion {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.oferta-disponible {
+    color: #059669;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.oferta-precios {
+    margin-top: auto;
+}
+
+.oferta-precio-anterior {
+    font-size: 13px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.oferta-precio-actual {
+    font-size: 25px;
+    color: var(--oferta-rojo);
+    font-weight: 900;
+}
+
+.oferta-ahorro {
+    font-size: 12px;
+    color: #059669;
+    font-weight: 700;
+    margin: 8px 0 16px;
+}
+
+.oferta-agregar {
+    width: 100%;
+    background: #10182d;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    padding: 13px 8px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+.oferta-agregar:hover {
+    background: var(--oferta-rojo);
+}
+
+.oferta-agregar i {
+    margin-right: 6px;
+}
+
+/* SIN RESULTADOS */
+
+.ofertas-vacio {
+    text-align: center;
+    padding: 60px 20px;
+    color: #64748b;
+}
+
+.ofertas-vacio[hidden] {
+    display: none;
+}
+
+.ofertas-vacio > i {
+    font-size: 45px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.ofertas-vacio h3 {
+    color: #10182d;
+    margin-bottom: 10px;
+}
+
+.ofertas-vacio button {
+    background: var(--oferta-rojo);
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 12px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* BANNER */
+
+.ofertas-banner-inferior {
+    background: linear-gradient(110deg, #fff1f2, #ffffff);
+    padding: 60px 25px;
+    text-align: center;
+}
+
+.ofertas-banner-inferior > div {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.ofertas-banner-inferior span {
+    color: var(--oferta-rojo);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.ofertas-banner-inferior h2 {
+    color: #10182d;
+    font-size: 29px;
+    margin: 12px 0;
+}
+
+.ofertas-banner-inferior p {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.ofertas-banner-inferior a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--oferta-rojo);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+@media (max-width: 1100px) {
+    .ofertas-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .ofertas-hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .ofertas-hero h1,
+    .ofertas-hero-info > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ofertas-hero-acciones {
+        justify-content: center;
+    }
+
+    .ofertas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .beneficios-container {
+        grid-template-columns: 1fr;
+    }
+
+    .beneficio {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .ofertas-hero {
+        padding: 45px 20px;
+    }
+
+    .ofertas-hero h1 {
+        font-size: 34px;
+    }
+
+    .promo-circulo {
+        width: 230px;
+        height: 230px;
+    }
+
+    .promo-porcentaje {
+        font-size: 58px;
+    }
+
+    .ofertas-seccion-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ofertas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ofertas-ordenar {
+        width: 100%;
+    }
+
+    .ofertas-ordenar select {
+        flex: 1;
+    }
+
+    .ofertas-main {
+        padding: 40px 15px;
+    }
+
+    .oferta-imagen {
+        height: 230px;
+    }
+}

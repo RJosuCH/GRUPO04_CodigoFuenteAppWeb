@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas - FERREMAS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/categorias.css">
+    <link rel="stylesheet" href="css/ofertas.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span>Envio gratis por compras mayores a $50.00</span>
+        <div class="top-links">
+            <a href="#">Tiendas</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+    <header class="main-header">
+        <a href="index.html" class="logo">FERREMAS</a>
+        <div class="search-box">
+            <input type="text" id="buscar-oferta"
+                placeholder="¿Qué estas buscando para tu proyecto? (ej. Taladro, Pintura...)">
+            <button type="button" id="btn-buscar"
+                aria-label="Buscar ofertas">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <div class="header-actions">
+            <a href="iniciosesion.html" class="action-btn">
+                <span class="icon">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+                <span class="label">Iniciar Sesion</span>
+            </a>
+            <button type="button" class="action-btn" id="open-cart">
+                <span class="icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <span class="label">Carrito</span>
+                <span class="cart-count" id="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="dropdown-dept">
+                <button type="button" class="dept-btn" id="toggle-dept">
+                    <i class="fa-solid fa-bars"></i>
+                    DEPARTAMENTOS
+                    <i class="fa-solid fa-chevron-down arrow"></i>
+                </button>
+                <div class="mega-menu" id="mega-menu">
+                    <ul class="cat-list">
+                        <li data-target="sub-herramientas"
+                            onclick="location.href='herramientas.html'">
+                            <span>
+                                <i class="fa-solid fa-wrench"></i>
+                                Herramientas
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-automotriz"
+                            onclick="location.href='automotriz.html'">
+                            <span>
+                                <i class="fa-solid fa-car"></i>
+                                Automotriz
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-construccion"
+                            onclick="location.href='construccion.html'">
+                            <span>
+                                <i class="fa-solid fa-trowel-bricks"></i>
+                                Construcción
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-pinturas"
+                            onclick="location.href='pinturas.html'">
+                            <span>
+                                <i class="fa-solid fa-paint-roller"></i>
+                                Pinturas
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-electrica"
+                            onclick="location.href='electrica.html'">
+                            <span>
+                                <i class="fa-solid fa-bolt"></i>
+                                Eléctrica
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                        <li data-target="sub-plomeria"
+                            onclick="location.href='plomeria.html'">
+                            <span>
+                                <i class="fa-solid fa-faucet-drip"></i>
+                                Plomería
+                            </span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </li>
+                    </ul>
+                    <div class="subcat-panel">
+                        <div class="subcat-content active" id="sub-herramientas">
+                            <h3>HERRAMIENTAS</h3>
+                            <a href="herramientas.html">Ver herramientas</a>
+                            <a href="productos.html?cat=herramientas">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-automotriz">
+                            <h3>AUTOMOTRIZ</h3>
+                            <a href="automotriz.html">Ver automotriz</a>
+                            <a href="productos.html?cat=automotriz">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-construccion">
+                            <h3>CONSTRUCCIÓN</h3>
+                            <a href="construccion.html">Ver construcción</a>
+                            <a href="productos.html?cat=construccion">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-pinturas">
+                            <h3>PINTURAS</h3>
+                            <a href="pinturas.html">Ver pinturas</a>
+                            <a href="productos.html?cat=pinturas">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-electrica">
+                            <h3>ELÉCTRICA</h3>
+                            <a href="electrica.html">Ver eléctrica</a>
+                            <a href="productos.html?cat=electrica">Todos los productos</a>
+                        </div>
+                        <div class="subcat-content" id="sub-plomeria">
+                            <h3>PLOMERÍA</h3>
+                            <a href="plomeria.html">Ver plomería</a>
+                            <a href="productos.html?cat=plomeria">Todos los productos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Catalogo Completo</a>
+                <a href="ofertas.html" class="offer-link active">Ofertas</a>
+                <a href="pedidos.html">Mis Pedidos</a>
+            </div>
+        </div>
+    </nav>
+    <section class="ofertas-hero">
+        <div class="ofertas-hero-container">
+            <div class="ofertas-hero-info">
+                <span class="ofertas-etiqueta">
+                    <i class="fa-solid fa-bolt"></i>
+                    PROMOCIONES ESPECIALES
+                </span>
+                <h1>
+                    ¡Ofertas que impulsan
+                    <span>tus proyectos!</span>
+                </h1>
+                <p>
+                    Aprovecha descuentos especiales en herramientas,
+                    materiales y accesorios seleccionados.
+                    Calidad FERREMAS a mejores precios.
+                </p>
+                <div class="ofertas-hero-acciones">
+                    <a href="#promociones" class="ofertas-btn-principal">
+                        Explorar ofertas
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="productos.html" class="ofertas-btn-secundario">
+                        Ver catálogo completo
+                    </a>
+                </div>
+            </div>
+            <div class="ofertas-hero-promo">
+                <div class="promo-circulo">
+                    <span>DESCUENTOS DE</span>
+                    <strong>HASTA</strong>
+                    <div class="promo-porcentaje">30%</div>
+                    <span>EN PRODUCTOS SELECCIONADOS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="beneficios-ofertas">
+        <div class="beneficios-container">
+            <div class="beneficio">
+                <i class="fa-solid fa-tags"></i>
+                <div>
+                    <strong>Precios especiales</strong>
+                    <span>Descuentos seleccionados</span>
+                </div>
+            </div>
+            <div class="beneficio">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <strong>Envío gratis</strong>
+                    <span>En compras mayores a $50</span>
+                </div>
+            </div>
+            <div class="beneficio">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <strong>Compra con confianza</strong>
+                    <span>Productos de calidad</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="ofertas-main" id="promociones">
+        <div class="ofertas-seccion-header">
+            <div>
+                <span class="ofertas-subtitulo">AHORRA EN GRANDE</span>
+                <h2>Ofertas destacadas</h2>
+                <p>Encuentra promociones en tus departamentos favoritos.</p>
+            </div>
+            <div class="ofertas-ordenar">
+                <label for="ordenar-ofertas">Ordenar por:</label>
+                <select id="ordenar-ofertas">
+                    <option value="destacados">Destacados</option>
+                    <option value="descuento">Mayor descuento</option>
+                    <option value="menor">Menor precio</option>
+                    <option value="mayor">Mayor precio</option>
+                    <option value="nombre">Nombre A-Z</option>
+                </select>
+            </div>
+        </div>
+        <div class="ofertas-filtros" id="filtros-ofertas">
+            <button type="button" class="filtro-oferta active" data-categoria="todos">
+                Todas las ofertas
+            </button>
+            <button type="button" class="filtro-oferta" data-categoria="herramientas">
+                Herramientas
+            </button>
+            <button type="button" class="filtro-oferta" data-categoria="automotriz">
+                Automotriz
+            </button>
+            <button type="button" class="filtro-oferta" data-categoria="construccion">
+                Construcción
+            </button>
+            <button type="button" class="filtro-oferta" data-categoria="pinturas">
+                Pinturas
+            </button>
+            <button type="button" class="filtro-oferta" data-categoria="electrica">
+                Eléctrica
+            </button>
+            <button type="button" class="filtro-oferta" data-categoria="plomeria">
+                Plomería
+            </button>
+        </div>
+        <p class="ofertas-contador" id="contador-ofertas"></p>
+        <div class="ofertas-grid" id="ofertas-grid"></div>
+        <div class="ofertas-vacio" id="ofertas-vacio" hidden>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h3>No encontramos ofertas</h3>
+            <p>Prueba con otra búsqueda o categoría.</p>
+            <button type="button" id="limpiar-ofertas">
+                Ver todas las ofertas
+            </button>
+        </div>
+    </main>
+    <section class="ofertas-banner-inferior">
+        <div>
+            <span>FERREMAS</span>
+            <h2>¡Tu próximo proyecto comienza aquí!</h2>
+            <p>
+                Explora nuestro catálogo completo y encuentra
+                todo lo que necesitas para construir, reparar y renovar.
+            </p>
+            <a href="productos.html">
+                Explorar catálogo
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Tu Carrito de Compras
+            </h2>
+            <button type="button" id="close-cart" aria-label="Cerrar carrito">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div>
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div>
+                    <span>Envío estimado:</span>
+                    <strong class="free-shipping">¡GRATIS!</strong>
+                </div>
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <strong id="cart-total">$0.00</strong>
+                </div>
+            </div>
+            <button type="button" id="checkout-btn" class="checkout-btn">
+                PROCESAR COMPRA
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+    <footer class="main-footer">
+        <p>© 2026 FERREMAS - Todo para tus proyectos.</p>
+    </footer>
+    <script src="js/departamento.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ofertas.js"></script>
+</body>
+</html>
