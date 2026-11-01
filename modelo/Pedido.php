@@ -1,3 +1,4 @@
+
 <?php
 
 class Pedido
@@ -91,6 +92,7 @@ class Pedido
             $this->db->commit();
 
             return $pedido;
+
         } catch (Throwable $e) {
             if ($this->db->inTransaction()) {
                 $this->db->rollBack();
@@ -213,6 +215,7 @@ class Pedido
             $q->execute([$estado, $id]);
 
             $this->db->commit();
+
         } catch (Throwable $e) {
             if ($this->db->inTransaction()) {
                 $this->db->rollBack();
