@@ -17,7 +17,8 @@ $permitidas = [
     'registro',
     'pedidos',
     'admin',
-    'inventario'
+    'inventario',
+    'proveedores'
 ];
 
 if (!in_array($pagina, $permitidas, true)) {
@@ -34,6 +35,7 @@ try {
     $producto = new Producto($db);
     $cuenta = new Usuario($db);
     $pedido = new Pedido($db);
+    $proveedor = new Proveedor($db);
 
     $usuario = $cuenta->actual();
 
@@ -95,6 +97,7 @@ try {
                 );
             }
 
+            
             $id = $pedido->crear(
                 $cliente,
                 $_SESSION['carrito']
@@ -115,6 +118,7 @@ try {
         }
 
         switch ($_POST['accion'] ?? '') {
+
             case 'registro':
                 $cuenta->registrar($_POST);
 
@@ -152,7 +156,9 @@ try {
 
             case 'eliminar':
                 exigirAdmin($usuario);
-                $producto->eliminar(entero($_POST['id'] ?? ''));
+                $producto->eliminar(
+                    entero($_POST['id'] ?? '')
+                );
                 break;
 
             case 'marca':
@@ -172,15 +178,128 @@ try {
                 );
                 break;
 
+            case 'registrar_suministro':
+               exigirAdmin($usuario);
+
+               $proveedor->registrarSuministro($_POST);
+
+               $pagina = 'proveedores';
+               $mensaje = 'Suministro registrado correctamente.';
+               break;
+
+
+            case 'guardar_proveedor':
+                exigirAdmin($usuario);
+
+                $nombre = texto(
+                    $_POST,
+                    'nombre_proveedor',
+                    150
+                );
+
+                $direccion = texto(
+                    $_POST,
+                    'direccion_proveedor',
+                    255,
+                    false
+                );
+
+                $correo = texto(
+                    $_POST,
+                    'correo_proveedor',
+                    150,
+                    false
+                );
+
+                $telefono = texto(
+                    $_POST,
+                    'telefono_proveedor',
+                    20
+                );
+
+                if (
+                    $correo !== ''
+                    && !filter_var($correo, FILTER_VALIDATE_EMAIL)
+                ) {
+                    throw new DomainException(
+                        'Correo del proveedor inválido.'
+                    );
+                }
+
+                $id = (int)($_POST['id_proveedor'] ?? 0);
+
+                if ($correo !== '') {
+                 $consulta = $db->prepare(
+                  'SELECT COUNT(*) FROM proveedor
+                   WHERE correo_proveedor = ?
+                   AND id_proveedor <> ?'
+                  );
+
+                $consulta->execute([$correo, $id]);
+
+                 if ((int)$consulta->fetchColumn() > 0) {
+                 throw new DomainException(
+                    'Ya existe un proveedor registrado con ese correo electrónico.'
+                   );
+                 }
+               }
+
+                if ($id > 0) {
+                    $proveedor->actualizar(
+                        $id,
+                        $nombre,
+                        $direccion,
+                        $correo,
+                        $telefono
+                    );
+                } else {
+                    $proveedor->guardar(
+                        $nombre,
+                        $direccion,
+                        $correo,
+                        $telefono
+                    );
+                }
+                break;
+
+            case 'eliminar_proveedor':
+                exigirAdmin($usuario);
+
+                $id = entero(
+                    $_POST['id_proveedor'] ?? ''
+                );
+
+                $consulta = $db->prepare(
+                    'SELECT COUNT(*)
+                     FROM proveedor_producto
+                     WHERE id_proveedor = ?'
+                );
+
+                $consulta->execute([$id]);
+
+                if ((int)$consulta->fetchColumn() > 0) {
+                    throw new DomainException(
+                        'No puedes eliminar un proveedor '
+                        . 'con productos relacionados.'
+                    );
+                }
+
+                $proveedor->eliminar($id);
+                break;
+
             default:
-                throw new DomainException('Acción no disponible.');
+                throw new DomainException(
+                    'Acción no disponible.'
+                );
         }
 
         $_SESSION['mensaje'] = 'Operación realizada.';
 
         redirigir(
             $pagina,
-            isset($_GET['cat']) ? ['cat' => $_GET['cat']] : []
+            isset($_GET['cat'])
+                ? ['cat' => $_GET['cat']]
+                : []
         );
     }
 
@@ -199,10 +318,18 @@ try {
     }
 
     if ($api !== '') {
-        throw new DomainException('Operación no disponible.');
+        throw new DomainException(
+            'Operación no disponible.'
+        );
     }
 
-    if (in_array($pagina, ['admin', 'inventario'], true)) {
+    if (
+        in_array(
+            $pagina,
+            ['admin', 'inventario', 'proveedores'],
+            true
+        )
+    ) {
         exigirAdmin($usuario);
     }
 
@@ -212,6 +339,10 @@ try {
 
     $categorias = $producto->categorias();
     $marcas = $producto->marcas();
+
+    $proveedores = $pagina === 'proveedores'
+        ? $proveedor->todos()
+        : [];
 
     $productos = $pagina === 'inventario'
         ? $producto->todos()
