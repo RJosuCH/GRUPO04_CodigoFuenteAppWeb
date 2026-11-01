@@ -197,6 +197,12 @@ class Producto
         $cantidad = entero($d['cantidad'] ?? '');
         $tipo = (string)($d['tipo'] ?? '');
 
+        if ($cantidad <= 0) {
+            throw new DomainException(
+                'La cantidad debe ser mayor que cero.'
+            );
+        }
+
         if (!in_array($tipo, ['entrada', 'salida'], true)) {
             throw new DomainException('Movimiento inválido.');
         }
@@ -230,8 +236,16 @@ class Producto
                 );
             }
 
-            $this->insertarMovimiento($id, $tipo, $cantidad, $motivo);
+            // El trigger de MariaDB actualiza las existencias.
+            $this->insertarMovimiento(
+                $id,
+                $tipo,
+                $cantidad,
+                $motivo
+            );
+
             $this->db->commit();
+
         } catch (Throwable $e) {
             if ($this->db->inTransaction()) {
                 $this->db->rollBack();
