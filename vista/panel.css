@@ -148,3 +148,72 @@
         padding: 20px;
     }
 }
+
+/* Formularios de proveedores */
+.proveedor-formulario {
+    width: min(90%, 850px);
+    max-width: 850px;
+    margin: 24px auto;
+    box-sizing: border-box;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .proveedor-formulario {
+        width: 100%;
+        margin: 16px auto;
+    }
+}
+
+
+/* Tarjetas de proveedores registrados */
+.proveedores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: 25px auto;
+    align-items: start;
+}
+
+.proveedor-tarjeta {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+.proveedor-tarjeta h3 {
+    margin-top: 0;
+}
+
+.proveedor-tarjeta details {
+    margin-top: 15px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 700px) {
+    .proveedores-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* Botón eliminar proveedor */
+.proveedores-grid .proveedor-tarjeta button[type="submit"] {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 20px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.proveedores-grid .proveedor-tarjeta button[type="submit"]:hover {
+    background-color: #a90000;
+}
