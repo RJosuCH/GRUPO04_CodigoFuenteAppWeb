@@ -78,6 +78,7 @@ function entrada(
         ): ?>
             <a href="<?= e(ruta('admin')) ?>">Administración</a>
             <a href="<?= e(ruta('inventario')) ?>">Inventario</a>
+            <a href="<?= e(ruta('proveedores')) ?>">Proveedores</a>
         <?php endif; ?>
     </nav>
 
@@ -165,6 +166,7 @@ function entrada(
         <div class="categorias-admin">
             <a href="<?= e(ruta('productos')) ?>">Productos</a>
             <a href="<?= e(ruta('inventario')) ?>">Inventario</a>
+            <a href="<?= e(ruta('proveedores')) ?>">Proveedores</a>
         </div>
 
         <p>
@@ -546,6 +548,202 @@ function entrada(
                 </form>
             </section>
         <?php endif; ?>
+    <?php endif; ?>
+   
+    <?php if ($pagina === 'proveedores'): ?>
+        <h1>GESTIÓN DE PROVEEDORES</h1>
+
+        <section class="caja proveedor-formulario">
+            <h2>Registrar proveedor</h2>
+
+            <?php abrirFormulario('guardar_proveedor'); ?>
+
+                <?php entrada(
+                    'nombre_proveedor',
+                    'Nombre del proveedor:',
+                    '',
+                    'text',
+                    'required maxlength="150"'
+                ); ?>
+
+                <?php entrada(
+                    'direccion_proveedor',
+                    'Dirección:',
+                    '',
+                    'text',
+                    'maxlength="255"'
+                ); ?>
+
+                <?php entrada(
+                    'correo_proveedor',
+                    'Correo electrónico:',
+                    '',
+                    'email',
+                    'maxlength="150"'
+                ); ?>
+
+                <?php entrada(
+                    'telefono_proveedor',
+                    'Teléfono:',
+                    '',
+                    'text',
+                    'required maxlength="20"'
+                ); ?>
+
+                <button class="btn-primary">
+                    Registrar proveedor
+                </button>
+            </form>
+        </section>
+
+        <section class="caja proveedor-formulario">
+            <h2>Registrar suministro</h2>
+
+            <?php abrirFormulario('registrar_suministro'); ?>
+
+                <label for="id_proveedor">
+                    Seleccionar proveedor:
+                </label>
+                <select name="id_proveedor"
+                        id="id_proveedor" required>
+                    <option value="">Seleccione un proveedor</option>
+                 
+                <div class="proveedores-grid">
+                    
+                    <?php foreach ($proveedores as $p): ?>
+                        <option value="<?= (int)$p['id_proveedor'] ?>">
+                            <?= e($p['nombre_proveedor']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <label for="id_producto">
+                    Seleccionar producto:
+                </label>
+                <select name="id_producto"
+                        id="id_producto" required>
+                    <option value="">Seleccione un producto</option>
+
+                    <?php foreach ($producto->todos() as $prod): ?>
+                        <option value="<?= (int)$prod['id_producto'] ?>">
+                            <?= e($prod['nombre_producto']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <?php entrada(
+                    'cantidad',
+                    'Cantidad suministrada:',
+                    '',
+                    'number',
+                    'required min="1" step="1"'
+                ); ?>
+
+                <?php entrada(
+                    'fecha_compra',
+                    'Fecha de compra:',
+                    '',
+                    'date',
+                    'required'
+                ); ?>
+
+                <?php entrada(
+                    'fecha_suministro',
+                    'Fecha de suministro:',
+                    '',
+                    'date'
+                ); ?>
+
+                <button class="btn-primary" type="submit">
+                    Registrar suministro
+                </button>
+            </form>
+        </section>
+
+        <h2>Proveedores registrados</h2>
+
+        <?php if (!$proveedores): ?>
+            <p class="caja">Todavía no hay proveedores registrados.</p>
+        <?php endif; ?>
+         
+        <div class="proveedores-grid">
+
+        <?php foreach ($proveedores as $p): ?>
+            <section class="caja proveedor-tarjeta">
+                <h3><?= e($p['nombre_proveedor']) ?></h3>
+
+                <p>
+                    <strong>Dirección:</strong>
+                    <?= e($p['direccion_proveedor'] ?: 'No registrada') ?>
+                </p>
+
+                <p>
+                    <strong>Correo:</strong>
+                    <?= e($p['correo_proveedor'] ?: 'No registrado') ?>
+                </p>
+
+                <p>
+                    <strong>Teléfono:</strong>
+                    <?= e($p['telefono_proveedor']) ?>
+                </p>
+
+                <details>
+                    <summary>Editar proveedor</summary>
+
+                    <?php abrirFormulario(
+                        'guardar_proveedor',
+                        ['id_proveedor' => $p['id_proveedor']]
+                    ); ?>
+
+                        <?php entrada(
+                            'nombre_proveedor',
+                            'Nombre:',
+                            $p['nombre_proveedor'],
+                            'text',
+                            'required maxlength="150"'
+                        ); ?>
+
+                        <?php entrada(
+                            'direccion_proveedor',
+                            'Dirección:',
+                            $p['direccion_proveedor'] ?? '',
+                            'text',
+                            'maxlength="255"'
+                        ); ?>
+
+                        <?php entrada(
+                            'correo_proveedor',
+                            'Correo:',
+                            $p['correo_proveedor'] ?? '',
+                            'email',
+                            'maxlength="150"'
+                        ); ?>
+
+                        <?php entrada(
+                            'telefono_proveedor',
+                            'Teléfono:',
+                            $p['telefono_proveedor'],
+                            'text',
+                            'required maxlength="20"'
+                        ); ?>
+
+                        <button class="btn-primary">
+                            Guardar cambios
+                        </button>
+                    </form>
+                </details>
+
+                <?php abrirFormulario(
+                    'eliminar_proveedor',
+                    ['id_proveedor' => $p['id_proveedor']]
+                ); ?>
+                    <button type="submit">
+                        Eliminar proveedor
+                    </button>
+                </form>
+            </section>
+       <?php endforeach; ?>
+</div>
     <?php endif; ?>
 
     <a class="btn-primary volver"
