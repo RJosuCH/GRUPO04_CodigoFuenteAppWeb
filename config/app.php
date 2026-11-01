@@ -25,6 +25,7 @@ require_once __DIR__ . '/conexion.php';
 require_once ROOT . '/modelo/Producto.php';
 require_once ROOT . '/modelo/Usuario.php';
 require_once ROOT . '/modelo/Pedido.php';
+require_once ROOT . '/modelo/Proveedor.php';
 
 $_SESSION['csrf'] ??= bin2hex(random_bytes(32));
 $_SESSION['compra_token'] ??= bin2hex(random_bytes(32));
