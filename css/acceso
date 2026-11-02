@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.acceso-body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f1f3f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+    color: #1e293b;
+}
+
+.volver-inicio {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.volver-inicio:hover {
+    color: #c8181d;
+}
+
+.acceso-contenedor {
+    width: 100%;
+    max-width: 440px;
+}
+
+.acceso-tarjeta {
+    background: white;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.acceso-logo {
+    font-size: 27px;
+    font-weight: 900;
+    color: #c8181d;
+    margin-bottom: 25px;
+}
+
+.acceso-logo span {
+    color: #c8181d;
+}
+
+.acceso-icono {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #fff0f0;
+    color: #c8181d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 18px;
+}
+
+.acceso-tarjeta h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.acceso-descripcion {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+.campo {
+    text-align: left;
+    margin-bottom: 19px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+}
+
+.campo input:focus {
+    border-color: #c8181d;
+    box-shadow: 0 0 0 2px rgba(200, 24, 29, 0.1);
+}
+
+.contrasena-contenedor {
+    position: relative;
+}
+
+.contrasena-contenedor input {
+    padding-right: 75px;
+}
+
+.mostrar-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: #c8181d;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.opciones-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    margin: 5px 0 23px;
+}
+
+.opciones-login label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.opciones-login a,
+.registro-texto a,
+.acceso-alternativo a {
+    color: #c8181d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.opciones-login a:hover,
+.registro-texto a:hover,
+.acceso-alternativo a:hover {
+    text-decoration: underline;
+}
+
+.btn-acceso {
+    width: 100%;
+    padding: 14px;
+    background: #c8181d;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-acceso:hover {
+    background: #a51217;
+}
+
+.registro-texto {
+    margin-top: 22px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.separador {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 25px 0;
+}
+
+.acceso-alternativo {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.admin-body {
+    background: #1e293b;
+}
+
+.admin-tarjeta {
+    border-top: 5px solid #c8181d;
+}
+
+.admin-icono {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.aviso-admin {
+    background: #fff4e5;
+    color: #8a4b08;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+@media (max-width: 500px) {
+    .acceso-body {
+        padding: 75px 15px 25px;
+    }
+
+    .volver-inicio {
+        top: 20px;
+        left: 18px;
+    }
+
+    .acceso-tarjeta {
+        padding: 28px 22px;
+    }
+}
