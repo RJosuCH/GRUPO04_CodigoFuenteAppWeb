@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | FERREMAS</title>
+    <link rel="stylesheet" href="css/acceso.css">
+</head>
+<body class="acceso-body">
+
+    <a href="index.html" class="volver-inicio">
+        ← Volver a la página principal
+    </a>
+
+    <main class="acceso-contenedor">
+        <section class="acceso-tarjeta">
+            <div class="acceso-logo">FERRE<span>MAS</span></div>
+
+            <div class="acceso-icono">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                width="34" height="34" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>
+            </div>
+
+            <h1>¡Bienvenido!</h1>
+            <p class="acceso-descripcion">
+                Inicia sesión en tu cuenta para continuar comprando.
+            </p>
+
+            <form id="formCliente">
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo"
+                        placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="contrasena">Contraseña</label>
+                    <div class="contrasena-contenedor">
+                        <input type="password" id="contrasena"
+                            placeholder="Ingresa tu contraseña" required>
+                        <button type="button" class="mostrar-password"
+                            onclick="mostrarPassword('contrasena', this)">
+                            Mostrar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="opciones-login">
+                    <label>
+                        <input type="checkbox" id="recordar">
+                        Recordarme
+                    </label>
+                    <a href="#" onclick="alert('La recuperación de contraseña estará disponible próximamente.'); return false;">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+                </div>
+
+                <button type="submit" class="btn-acceso">
+                    Iniciar sesión
+                </button>
+            </form>
+
+            <p class="acceso-alternativo">
+                ¿No tienes una cuenta?
+                <a href="crear-cuenta.html">Crear cuenta</a>
+            </p>
+
+            <div class="separador"></div>
+
+            <p class="acceso-alternativo">
+                ¿Eres administrador?
+                <a href="admin.html">Accede desde aquí</a>
+            </p>
+        </section>
+    </main>
+
+    <script src="js/iniciosesion.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
