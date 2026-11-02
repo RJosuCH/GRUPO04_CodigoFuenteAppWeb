@@ -1,0 +1,213 @@
+.pedidos-contenedor {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 28px 25px 55px;
+}
+
+.pedidos-migas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.pedidos-migas a {
+    color: #64748b;
+    text-decoration: none;
+}
+
+.pedidos-migas a:hover { color: #c8181d; }
+.pedidos-migas i { font-size: 10px; }
+
+.pedidos-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.pedidos-etiqueta {
+    color: #c8181d;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.pedidos-intro h1 {
+    color: #10182d;
+    font-size: 34px;
+    margin: 7px 0;
+}
+
+.pedidos-intro p, .lista-pedidos-titulo p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.btn-seguir-comprando {
+    display: inline-block;
+    background: #c8181d;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 18px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.btn-seguir-comprando:hover { background: #a91419; }
+.btn-seguir-comprando i { margin-right: 7px; }
+
+.resumen-pedidos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+.resumen-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.resumen-icono {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #fff0f0;
+    color: #c8181d;
+    font-size: 19px;
+}
+
+.resumen-icono.pendiente { background: #fff7e6; color: #d97706; }
+.resumen-icono.entregado { background: #e9f8ef; color: #15945b; }
+.resumen-tarjeta p { color: #64748b; font-size: 13px; margin-bottom: 5px; }
+.resumen-tarjeta strong { color: #10182d; font-size: 23px; }
+
+.lista-pedidos {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.lista-pedidos-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.lista-pedidos-titulo h2 { color: #10182d; font-size: 20px; margin-bottom: 5px; }
+.filtro-pedidos { color: #64748b; font-size: 13px; }
+.filtro-pedidos select {
+    margin-left: 6px;
+    padding: 9px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+    color: #334155;
+}
+
+.pedido-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.pedido-superior, .pedido-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 18px;
+    background: #f8fafc;
+}
+
+.pedido-superior { border-bottom: 1px solid #e2e8f0; }
+.pedido-numero { display: block; color: #10182d; font-size: 14px; font-weight: 800; margin-bottom: 5px; }
+.pedido-fecha { color: #64748b; font-size: 12px; }
+
+.estado {
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+.estado-camino { color: #a16207; background: #fef3c7; }
+.estado-entregado { color: #047857; background: #d1fae5; }
+
+.pedido-detalle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 18px;
+}
+
+.pedido-producto-icono {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #c8181d;
+    font-size: 23px;
+}
+
+.pedido-producto { flex: 1; }
+.pedido-producto strong { display: block; color: #1e293b; font-size: 14px; margin-bottom: 6px; }
+.pedido-producto span, .pedido-total span { color: #64748b; font-size: 12px; }
+.pedido-total { text-align: right; }
+.pedido-total strong { display: block; color: #c8181d; font-size: 18px; margin-top: 5px; }
+.pedido-inferior { border-top: 1px solid #e2e8f0; background: #fff; color: #64748b; font-size: 12px; }
+.pedido-inferior i { margin-right: 5px; }
+.btn-detalles {
+    border: 1px solid #c8181d;
+    border-radius: 6px;
+    background: #fff;
+    color: #c8181d;
+    padding: 9px 13px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-detalles:hover { background: #c8181d; color: #fff; }
+
+.sin-pedidos { padding: 25px; text-align: center; color: #64748b; }
+.sin-pedidos[hidden], .pedido-card[hidden] { display: none; }
+.aviso-demo { margin-top: 18px; color: #64748b; font-size: 12px; line-height: 1.5; }
+.aviso-demo i { color: #c8181d; margin-right: 5px; }
+
+@media (max-width: 700px) {
+    .pedidos-intro, .lista-pedidos-titulo { align-items: flex-start; flex-direction: column; }
+    .resumen-pedidos { grid-template-columns: 1fr; }
+    .pedido-superior, .pedido-inferior { align-items: flex-start; flex-direction: column; }
+    .pedido-detalle { flex-wrap: wrap; }
+    .pedido-total { margin-left: 70px; text-align: left; }
+    .filtro-pedidos select { margin-top: 8px; margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+    .pedidos-contenedor { padding: 22px 14px 40px; }
+    .pedidos-intro h1 { font-size: 28px; }
+    .lista-pedidos { padding: 15px; }
+    .pedidos-nav { padding: 0 12px; }
+    .nav-links { flex-wrap: wrap; gap: 8px; margin-left: 0; }
+}
