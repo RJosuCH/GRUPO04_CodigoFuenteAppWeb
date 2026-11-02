@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis pedidos | FERREMAS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mispedidos.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span>Envío gratis por compras mayores a $50.00</span>
+        <div class="top-links">
+            <a href="#">Tiendas</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">FERREMAS</a>
+        <form class="search-box" action="productos.html" method="get">
+            <input type="text" name="buscar" placeholder="¿Qué estás buscando para tu proyecto?">
+            <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <div class="header-actions">
+            <a href="iniciosesion.html" class="action-btn">
+                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                <span class="label">Mi cuenta</span>
+            </a>
+            <a href="index.html" class="action-btn">
+                <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                <span class="label">Carrito</span>
+            </a>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container pedidos-nav">
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Catálogo completo</a>
+                <a href="ofertas.html">Ofertas</a>
+                <a href="mispedidos.html" class="active">Mis pedidos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pedidos-contenedor">
+        <div class="pedidos-migas">
+            <a href="index.html">Inicio</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Mis pedidos</span>
+        </div>
+
+        <section class="pedidos-intro">
+            <div>
+                <span class="pedidos-etiqueta">MI CUENTA</span>
+                <h1>Mis pedidos</h1>
+                <p>Consulta tus compras y revisa el estado de tus pedidos.</p>
+            </div>
+            <a href="productos.html" class="btn-seguir-comprando">
+                <i class="fa-solid fa-bag-shopping"></i> Seguir comprando
+            </a>
+        </section>
+
+        <section class="resumen-pedidos">
+            <div class="resumen-tarjeta">
+                <span class="resumen-icono"><i class="fa-solid fa-box"></i></span>
+                <div><p>Total de pedidos</p><strong>3</strong></div>
+            </div>
+            <div class="resumen-tarjeta">
+                <span class="resumen-icono pendiente"><i class="fa-solid fa-truck-fast"></i></span>
+                <div><p>En camino</p><strong>1</strong></div>
+            </div>
+            <div class="resumen-tarjeta">
+                <span class="resumen-icono entregado"><i class="fa-solid fa-circle-check"></i></span>
+                <div><p>Entregados</p><strong>2</strong></div>
+            </div>
+        </section>
+
+        <section class="lista-pedidos">
+            <div class="lista-pedidos-titulo">
+                <div><h2>Historial de compras</h2><p>Estos son tus pedidos recientes.</p></div>
+                <label class="filtro-pedidos" for="filtro-estado">Filtrar:
+                    <select id="filtro-estado">
+                        <option value="todos">Todos los pedidos</option>
+                        <option value="camino">En camino</option>
+                        <option value="entregado">Entregados</option>
+                    </select>
+                </label>
+            </div>
+
+            <article class="pedido-card" data-estado="camino">
+                <div class="pedido-superior">
+                    <div><span class="pedido-numero">Pedido #RF-2026-0136</span><span class="pedido-fecha">Realizado el 28 de octubre de 2026</span></div>
+                    <span class="estado estado-camino"><i class="fa-solid fa-truck"></i> En camino</span>
+                </div>
+                <div class="pedido-detalle">
+                    <div class="pedido-producto-icono"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div class="pedido-producto"><strong>Taladro percutor inalámbrico 20V</strong><span>1 producto</span></div>
+                    <div class="pedido-total"><span>Total</span><strong>$89.99</strong></div>
+                </div>
+                <div class="pedido-inferior"><span><i class="fa-solid fa-location-dot"></i> Entrega estimada: 4 de noviembre</span><button type="button" class="btn-detalles" onclick="mostrarDetalle('FM-2026-0158')">Ver detalles</button></div>
+            </article>
+
+            <article class="pedido-card" data-estado="entregado">
+                <div class="pedido-superior">
+                    <div><span class="pedido-numero">Pedido #RF-2026-0434</span><span class="pedido-fecha">Realizado el 15 de octubre de 2026</span></div>
+                    <span class="estado estado-entregado"><i class="fa-solid fa-circle-check"></i> Entregado</span>
+                </div>
+                <div class="pedido-detalle">
+                    <div class="pedido-producto-icono"><i class="fa-solid fa-paint-roller"></i></div>
+                    <div class="pedido-producto"><strong>Pintura látex lavable blanco 5 galones</strong><span>1 producto</span></div>
+                    <div class="pedido-total"><span>Total</span><strong>$45.00</strong></div>
+                </div>
+                <div class="pedido-inferior"><span><i class="fa-solid fa-house"></i> Entregado el 18 de octubre</span><button type="button" class="btn-detalles" onclick="mostrarDetalle('FM-2026-0124')">Ver detalles</button></div>
+            </article>
+
+            <article class="pedido-card" data-estado="entregado">
+                <div class="pedido-superior">
+                    <div><span class="pedido-numero">Pedido #RF-2026-0307</span><span class="pedido-fecha">Realizado el 2 de octubre de 2026</span></div>
+                    <span class="estado estado-entregado"><i class="fa-solid fa-circle-check"></i> Entregado</span>
+                </div>
+                <div class="pedido-detalle">
+                    <div class="pedido-producto-icono"><i class="fa-solid fa-toolbox"></i></div>
+                    <div class="pedido-producto"><strong>Juego de herramientas manuales</strong><span>1 producto</span></div>
+                    <div class="pedido-total"><span>Total</span><strong>$32.50</strong></div>
+                </div>
+                <div class="pedido-inferior"><span><i class="fa-solid fa-house"></i> Entregado el 5 de octubre</span><button type="button" class="btn-detalles" onclick="mostrarDetalle('FM-2026-0091')">Ver detalles</button></div>
+            </article>
+            <p id="sin-pedidos" class="sin-pedidos" hidden>No hay pedidos con ese estado.</p>
+        </section>
+
+        <div class="aviso-demo"><i class="fa-solid fa-circle-info"></i> Información con fines ilustrativos.</div>
+    </main>
+
+    <footer class="main-footer"><p>© 2026 FERREMAS - Todo para tus proyectos.</p></footer>
+
+    <script src="mispedidos.js"></script>
+</body>
+</html>
