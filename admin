@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso administrativo | FERREMAS</title>
+    <link rel="stylesheet" href="css/acceso.css">
+</head>
+<body class="acceso-body admin-body">
+
+    <a href="index.html" class="volver-inicio">
+        ← Volver a la página principal
+    </a>
+
+    <main class="acceso-contenedor">
+        <section class="acceso-tarjeta admin-tarjeta">
+            <div class="acceso-logo">FERRE<span>MAS</span></div>
+
+            <div class="acceso-icono admin-icono">⚙</div>
+            <h1>Panel administrativo</h1>
+            <p class="acceso-descripcion">
+                Acceso exclusivo para el personal autorizado de FERREMAS.
+            </p>
+
+            <div class="aviso-admin">
+                Área restringida. Ingresa tus credenciales administrativas.
+            </div>
+
+            <form id="formAdmin">
+                <div class="campo">
+                    <label for="usuario">Usuario o correo administrativo</label>
+                    <input type="text" id="usuario"
+                        placeholder="Nombre de usuario" required>
+                </div>
+
+                <div class="campo">
+                    <label for="passwordAdmin">Contraseña</label>
+                    <div class="contrasena-contenedor">
+                        <input type="password" id="passwordAdmin"
+                            placeholder="Ingresa tu contraseña" required>
+                        <button type="button" class="mostrar-password"
+                            onclick="mostrarPassword('passwordAdmin', this)">
+                            Mostrar
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-acceso">
+                    Acceder al sistema
+                </button>
+            </form>
+
+            <div class="separador"></div>
+
+            <p class="acceso-alternativo">
+                ¿Buscas ingresar como cliente?
+                <a href="iniciosesion.html">Ir al acceso de clientes</a>
+            </p>
+        </section>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
