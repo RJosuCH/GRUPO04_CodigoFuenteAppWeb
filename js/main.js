@@ -123,9 +123,13 @@ function actualizarCarrito() {
 }
 
 checkoutBtn.addEventListener("click", function () {
-    if (carrito.length === 0) return;
+    if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
 
-    alert("Carrito listo para continuar con el proceso de compra.");
+    guardarCarrito();
+    window.location.href = "checkout.html";
 });
 
 actualizarCarrito();

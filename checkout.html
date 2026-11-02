@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar compra | FERREMAS</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <header class="checkout-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">FERREMAS</a>
+
+            <a href="productos.html" class="volver-tienda">
+                <i class="fa-solid fa-arrow-left"></i>
+                Seguir comprando
+            </a>
+        </div>
+    </header>
+    <main class="checkout-container">
+        <div class="checkout-titulo">
+            <span>FINALIZA TU PEDIDO</span>
+            <h1>Procesar compra</h1>
+            <p>Completa tus datos y revisa tu pedido antes de confirmarlo.</p>
+        </div>
+        <div class="checkout-pasos">
+            <div class="paso completado">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Carrito</span>
+            </div>
+            <div class="linea-paso"></div>
+            <div class="paso activo">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Datos de compra</span>
+            </div>
+            <div class="linea-paso"></div>
+            <div class="paso">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Confirmación</span>
+            </div>
+        </div>
+        <div class="checkout-layout" id="checkout-layout">
+            <form id="form-checkout" class="checkout-form">
+                <section class="checkout-card">
+                    <h2>
+                        <i class="fa-solid fa-user"></i>
+                        Información personal
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre"
+                                   placeholder="Ingresa tu nombre completo"
+                                   maxlength="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono"
+                                   placeholder="7777-7777"
+                                   pattern="[0-9]{4}-?[0-9]{4}"
+                                   title="Ingresa 8 dígitos, con o sin guion"
+                                   required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="correo">Correo electrónico *</label>
+                            <input type="email" id="correo" name="correo"
+                                   placeholder="correo@ejemplo.com" required>
+                        </div>
+                    </div>
+                </section>
+                <section class="checkout-card">
+                    <h2>
+                        <i class="fa-solid fa-truck"></i>
+                        Método de entrega
+                    </h2>
+                    <div class="opciones-entrega">
+                        <label class="opcion-radio">
+                            <input type="radio" name="entrega"
+                                   value="domicilio" checked>
+                            <span>
+                                <strong>Entrega a domicilio</strong>
+                                <small>Recibe tu pedido en la dirección indicada</small>
+                            </span>
+                        </label>
+                        <label class="opcion-radio">
+                            <input type="radio" name="entrega"
+                                   value="retiro">
+                            <span>
+                                <strong>Retiro en tienda</strong>
+                                <small>Recoge tu pedido en FERREMAS</small>
+                            </span>
+                        </label>
+                    </div>
+                    <div id="campos-direccion">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="departamento">Departamento *</label>
+                                <select id="departamento" name="departamento">
+                                    <option value="">Selecciona</option>
+                                    <option>Ahuachapán</option>
+                                    <option>Santa Ana</option>
+                                    <option>Sonsonate</option>
+                                    <option>Chalatenango</option>
+                                    <option>La Libertad</option>
+                                    <option>San Salvador</option>
+                                    <option>Cuscatlán</option>
+                                    <option>La Paz</option>
+                                    <option>Cabañas</option>
+                                    <option>San Vicente</option>
+                                    <option>Usulután</option>
+                                    <option>San Miguel</option>
+                                    <option>Morazán</option>
+                                    <option>La Unión</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="municipio">Distrito o municipio *</label>
+                                <input type="text" id="municipio"
+                                       maxlength="100"
+                                       placeholder="Ej. Soyapango">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="direccion">Dirección completa *</label>
+                                <textarea id="direccion" rows="3"
+                                    maxlength="300"
+                                    placeholder="Colonia, calle, número de casa y referencias"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="checkout-card">
+                    <h2>
+                        <i class="fa-solid fa-wallet"></i>
+                        Método de pago
+                    </h2>
+                    <div class="opcion-radio">
+                        <i class="fa-solid fa-money-bill-wave icono-pago"></i>
+                        <span>
+                            <strong id="texto-pago">Pago contra entrega</strong>
+                            <small>No se realizará ningún cobro en esta página.</small>
+                        </span>
+                    </div>
+                </section>
+                <section class="checkout-card">
+                    <h2>
+                        <i class="fa-solid fa-comment-dots"></i>
+                        Indicaciones adicionales
+                    </h2>
+                    <div class="form-group">
+                        <label for="indicaciones">Comentarios (opcional)</label>
+                        <textarea id="indicaciones" rows="3"
+                                  maxlength="300"
+                                  placeholder="Indicaciones sobre tu pedido"></textarea>
+                    </div>
+                </section>
+            </form>
+            <aside class="resumen-card">
+                <h2>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Resumen del pedido
+                </h2>
+                <div id="resumen-productos"></div>
+                <div class="resumen-totales">
+                    <div>
+                        <span>Subtotal</span>
+                        <strong id="resumen-subtotal">$0.00</strong>
+                    </div>
+                    <div>
+                        <span>Envío</span>
+                        <strong id="resumen-envio">Gratis</strong>
+                    </div>
+                    <div class="resumen-total">
+                        <span>Total a pagar</span>
+                        <strong id="resumen-total">$0.00</strong>
+                    </div>
+                </div>
+                <button type="submit" form="form-checkout"
+                        id="confirmar-pedido" class="btn-confirmar">
+                    <i class="fa-solid fa-circle-check"></i>
+                    CONFIRMAR PEDIDO
+                </button>
+                <p class="nota-compra">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Este formulario registra una solicitud de compra
+                    de demostración. No realiza pagos reales.
+                </p>
+            </aside>
+        </div>
+        <section id="confirmacion" class="confirmacion" hidden>
+            <div class="confirmacion-icono">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>¡Pedido registrado correctamente!</h2>
+            <p>Tu solicitud de compra se ha guardado.</p>
+            <div class="confirmacion-datos">
+                <div>
+                    <span>Número de pedido</span>
+                    <strong id="numero-pedido"></strong>
+                </div>
+                <div>
+                    <span>Estado</span>
+                    <strong>Pendiente</strong>
+                </div>
+                <div>
+                    <span>Total</span>
+                    <strong id="total-confirmacion"></strong>
+                </div>
+            </div>
+            <div class="confirmacion-botones">
+                <a href="pedidos.html" class="btn-confirmar">
+                    Ver mis pedidos
+                </a>
+                <a href="index.html" class="btn-volver">
+                    Volver al inicio
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="checkout-footer">
+        © 2026 FERREMAS - Todo para tus proyectos.
+    </footer>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
