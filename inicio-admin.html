@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel administrativo | FERREMAS</title>
+    <link rel="stylesheet" href="css/admin-panel.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="admin-logo">FERREMAS</div>
+
+        <div class="admin-info">
+            <div class="avatar-admin">A</div>
+            <div>
+                <strong>Administrador</strong>
+                <small>Panel de gestión</small>
+            </div>
+        </div>
+
+        <nav class="menu-admin">
+            <a href="inicio-admin.html" class="activo">▦ Dashboard</a>
+            <a href="productos.html">▣ Productos</a>
+            <a href="pedidos.html">▤ Pedidos</a>
+            <a href="#" onclick="alert('La gestión de clientes estará disponible próximamente.'); return false;">♙ Clientes</a>
+            <a href="#" onclick="alert('La gestión de inventario estará disponible próximamente.'); return false;">▥ Inventario</a>
+        </nav>
+
+        <div class="sidebar-final">
+            <a href="index.html">← Ver tienda</a>
+            <a href="admin.html" class="cerrar-sesion">↪ Cerrar sesión</a>
+        </div>
+    </aside>
+
+    <main class="contenido-admin">
+
+        <header class="encabezado-admin">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Bienvenido al panel administrativo de FERREMAS.</p>
+            </div>
+            <div class="etiqueta-admin">Administrador</div>
+        </header>
+
+        <section class="resumen-admin">
+            <article class="tarjeta-estadistica">
+                <div class="estadistica-icono">▤</div>
+                <p>Total de pedidos</p>
+                <h2>125</h2>
+                <small>Pedidos registrados</small>
+            </article>
+
+            <article class="tarjeta-estadistica">
+                <div class="estadistica-icono">▣</div>
+                <p>Productos</p>
+                <h2>86</h2>
+                <small>Productos registrados</small>
+            </article>
+
+            <article class="tarjeta-estadistica">
+                <div class="estadistica-icono">♙</div>
+                <p>Clientes</p>
+                <h2>64</h2>
+                <small>Clientes registrados</small>
+            </article>
+
+            <article class="tarjeta-estadistica">
+                <div class="estadistica-icono">▥</div>
+                <p>Stock bajo</p>
+                <h2>8</h2>
+                <small>Productos por revisar</small>
+            </article>
+        </section>
+
+        <section class="acciones-admin">
+            <h2>Accesos rápidos</h2>
+
+            <div class="acciones-grid">
+                <a href="productos.html" class="accion-card">
+                    <span>＋</span>
+                    <strong>Consultar productos</strong>
+                    <small>Ver catálogo de productos</small>
+                </a>
+
+                <a href="pedidos.html" class="accion-card">
+                    <span>▤</span>
+                    <strong>Consultar pedidos</strong>
+                    <small>Revisar pedidos registrados</small>
+                </a>
+
+                <a href="#" class="accion-card"
+                   onclick="alert('La gestión de inventario estará disponible próximamente.'); return false;">
+                    <span>▥</span>
+                    <strong>Inventario</strong>
+                    <small>Consultar existencias</small>
+                </a>
+            </div>
+        </section>
+
+        <section class="tabla-admin">
+            <div class="tabla-encabezado">
+                <div>
+                    <h2>Pedidos recientes</h2>
+                    <p>Ejemplo de pedidos registrados en la tienda.</p>
+                </div>
+                <a href="pedidos.html">Ver todos</a>
+            </div>
+
+            <div class="tabla-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N.º pedido</th>
+                            <th>Cliente</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>#PED-001</td>
+                            <td>Juan Pérez</td>
+                            <td>01/11/2026</td>
+                            <td>$45.00</td>
+                            <td><span class="estado pendiente">Pendiente</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#PED-002</td>
+                            <td>María López</td>
+                            <td>31/10/2026</td>
+                            <td>$78.50</td>
+                            <td><span class="estado completado">Completado</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#PED-003</td>
+                            <td>Carlos Hernández</td>
+                            <td>30/10/2026</td>
+                            <td>$32.00</td>
+                            <td><span class="estado proceso">En proceso</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer-admin">
+            FERREMAS · Panel administrativo
+        </footer>
+
+    </main>
+
+</body>
+</html>
